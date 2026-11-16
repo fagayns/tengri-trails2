@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: tengri-trails
+    runtime: docker
+    plan: free
+    healthCheckPath: /healthz
+    envVars:
+      - key: Telegram__BotToken
+        sync: false
+      - key: Telegram__ChatId
+        sync: false
+      # Optional: persistent Postgres (e.g. Neon) instead of the temporary SQLite file
+      # - key: Database__Provider
+      #   value: Postgres
+      # - key: ConnectionStrings__Postgres
+      #   sync: false

@@ -1,0 +1,23 @@
+@page "/{lang}/privacy"
+@model TengriTrails.Pages.PrivacyModel
+@inject ITextCatalog T
+@{
+    ViewData["Language"] = Model.Language;
+    ViewData["LanguageSuffix"] = "/privacy";
+    ViewData["Title"] = T.Get("privacy.title", Model.Language);
+}
+<section class="page-hero">
+    <div class="page-hero-image"></div>
+    <div class="page-hero-content">
+        <p class="eyebrow eyebrow-light"><span></span>@T.Get("privacy.eyebrow", Model.Language)</p>
+        <h1>@T.Get("privacy.title", Model.Language)</h1>
+    </div>
+</section>
+<section class="section privacy-section">
+    <p>@T.Get("privacy.demo_notice", Model.Language)</p>
+    <h2>@T.Get("privacy.scope_title", Model.Language)</h2>
+    <p>@T.Get("privacy.scope_copy", Model.Language)</p>
+    <h2>@T.Get("privacy.rights_title", Model.Language)</h2>
+    <p>@T.Get("privacy.rights_copy", Model.Language)</p>
+    <a class="text-link privacy-terms-link" href="/@Model.Language/terms">@T.Get("footer.terms", Model.Language)<span aria-hidden="true">↗</span></a>
+</section>
